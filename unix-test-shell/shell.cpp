@@ -60,7 +60,7 @@ Shell::Shell(std::string defaultName, std::string defaultDelim, int aliasSize, i
         {std::pair<std::string, std::string>("readnewnames", READALIASINFO)},
         {std::pair<std::string, std::string>("newnames", PRINTALIASINFO)},
         {std::pair<std::string, std::string>("frontjob", FRONTJOBINFO)},
-        {std::pair<std::string, std::string>("backjob", BACKJOBINFO)},
+        {std::pair<std::string, std::string>("backjobs", BACKJOBINFO)},
         {std::pair<std::string, std::string>("cond", CONDINFO)},
         {std::pair<std::string, std::string>("notcond", CONDINFO)},
         {std::pair<std::string, std::string>("!", REPLACEHISTINFO)}
@@ -1121,8 +1121,9 @@ void Shell::run()
         //determine command and run it
         execCommand();
         
-        if (scriptStack[0].size() == 1)
-            scriptStack.pop_front();
+        if (scriptStack.size() != 0)
+            if (scriptStack[0].size() == 1)
+                scriptStack.pop_front();
     }
     catch (error const &e)
     {
