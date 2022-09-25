@@ -15,7 +15,7 @@ Current internal commands:
 Adds or deletes an alias.  The first argument is the name of the alias and the second is an optional value.
 If one argument is included, that alias will be deleted from the alias list.  If two argumentss are included, the first is inserted into the list as an alias for the second
 
-2. - command
+2. "-" command
 runs a command as a background process
 
 3. backjobs
